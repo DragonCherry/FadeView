@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'FadeView_Example' do
+  pod 'FadeView', :path => '../'
+
+  target 'FadeView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
