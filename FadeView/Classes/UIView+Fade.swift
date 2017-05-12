@@ -26,7 +26,7 @@ extension UIView {
     }
     
     public func fadeInSubview(_ subview: UIView, duration: TimeInterval = 0.25, completion: (() -> Void)? = nil) {
-        if self.superview == nil {
+        if subview.superview == nil {
             addSubview(subview)
             isHidden = false
             self.alpha = 0
