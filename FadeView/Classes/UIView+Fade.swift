@@ -28,12 +28,13 @@ extension UIView {
     public func fadeInSubview(_ subview: UIView, duration: TimeInterval = 0.25, completion: (() -> Void)? = nil) {
         if subview.superview == nil {
             addSubview(subview)
-            isHidden = false
-            self.alpha = 0
+            subview.isHidden = false
+            let originalAlpha = subview.alpha
+            subview.alpha = 0
             UIView.animate(
                 withDuration: duration,
                 animations: {
-                    self.alpha = 1
+                    subview.alpha = originalAlpha
             },
                 completion: { finished in
                     completion?()
